@@ -13,9 +13,13 @@ class Category(models.Model):
     updated_time = models.DateTimeField(_('updated time'), auto_now=True)
 
     class Meta:
-        db_table = _('categories')
+        db_table = 'categories'
         verbose_name = _('Category')
         verbose_name_plural = _('Categories')
+
+
+    def __str__(self):
+        return self.title
 
 
 class Product(models.Model):
@@ -32,6 +36,8 @@ class Product(models.Model):
         db_table = 'products'
         verbose_name = _('product')
         verbose_name_plural = _('products')
+
+    
 
 class File(models.Model):
 
